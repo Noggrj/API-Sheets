@@ -13,4 +13,4 @@ Essa chave contém cada e-mail de cada atendente, para cada uma das 3 filas Prod
 
 Caso o CPF, não esteja cadastrado na planilha, retornará "find":false.
 
-Se trata de uma API Intermediária, para um projeto de ChatBot, com integração com planilha Google Sheets e validação.
+Se trata de uma API Intermediária, para um projeto de ChatBot, com integração em planilha Google Sheets e validação.
