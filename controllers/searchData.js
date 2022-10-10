@@ -8,10 +8,29 @@ exports.getData = (dados,cpf) => {
         dados = dados.values
         
         let new_values = processingValues(dados)
+        
         let value = validation(new_values, cpf)
-    
-        return value
-    
+       
+        
+        let email = extractionEmails(dados,value["index"])
+ 
+        
+       if(value["find"]===true){
+           return {
+                "find": true,
+                "elem": value["elem"],
+                "index": value["index"],
+                "emailProdutos" : email[1],
+                "emailServicos": email[2],
+                "emailEngenharia": email[3]
+        }
+      }
+      else{
+        return {
+          "find": false
+        }
+      }
+
       } catch (e) {
         return e;
       }
@@ -49,4 +68,8 @@ exports.getData = (dados,cpf) => {
         "index": -1
       }
     
+    }
+    function extractionEmails(dados,indice){
+      dados = dados[indice]
+      return dados
     }
